@@ -67,7 +67,8 @@ export default function CV(props) {
         </Experience>
         <Experience title="Sharedress - Paris" date="2018 - 2020" subtitle="B2B app" jobtitle="CTO">
           Created a B2B app using <b>Cloud functions</b> for <b>Firebase</b>, <b>React Native</b>{' '}
-          and <b>Redux</b> to suggest the best personalized products to the business' customers.
+          and <b>Redux</b> to suggest the best personalized products to the business&apos;
+          customers.
         </Experience>
         <Experience
           title="Allianz - Paris"

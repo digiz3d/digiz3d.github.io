@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 
 import CurrentScene from './CurrentScene'
+import { Environment } from '@react-three/drei'
 
 export default function WalletScene() {
   return (
@@ -23,6 +24,7 @@ export default function WalletScene() {
         <motion.pointLight position={[2, 2, -2]} intensity={2} />
 
         <CurrentScene />
+        <Environment preset="sunset" />
       </Suspense>
     </Canvas>
   )

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -31,9 +32,9 @@ export default function Home() {
           </div>
 
           <div className="p-4">
-            <a href="/resume" className="px-2 pl-0">
-              CV
-            </a>
+            <Link href="/resume" prefetch>
+              <a className="px-2 pl-0">CV</a>
+            </Link>
             <a href="https://github.com/digiz3d" className="px-2">
               Github
             </a>

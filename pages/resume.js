@@ -1,9 +1,5 @@
 import Head from 'next/head'
 
-// import Board from '../components/Board'
-// import HeadBrb from '../components/head-brb'
-// import HomeScene from '../components/HomeScene'
-
 import CV from '../components/cv-a4'
 
 export default function Home() {
@@ -16,9 +12,6 @@ export default function Home() {
       </Head>
 
       <CV />
-      {/* <Board /> */}
-      {/* <HomeScene /> */}
-      {/* <HeadBrb /> */}
     </div>
   )
 }
