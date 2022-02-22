@@ -11,8 +11,9 @@ export default function CardHolderSlider(props) {
 
   const group = useRef()
   const { nodes, materials } = useGLTF('/card-holder-slider.glb')
+  const { children, ...otherProps } = props
   return (
-    <motion.group ref={group} {...props} dispose={null}>
+    <motion.group ref={group} {...otherProps} dispose={null}>
       <motion.mesh
         castShadow
         receiveShadow
@@ -24,7 +25,9 @@ export default function CardHolderSlider(props) {
           geometry={nodes.Slider.geometry}
           material={materials.BlackPlastic}
           position={[-0.1, 0, -0.03]}
+          onTap={props.onTapSlider}
         />
+        {children}
       </motion.mesh>
     </motion.group>
   )
