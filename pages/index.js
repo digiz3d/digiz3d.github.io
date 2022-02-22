@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           <div className="p-4">
-            <Link href="/resume" prefetch>
+            <Link href="/resume">
               <a className="px-2 pl-0">CV</a>
             </Link>
             <a href="https://github.com/digiz3d" className="px-2">

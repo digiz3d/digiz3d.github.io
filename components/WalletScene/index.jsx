@@ -1,10 +1,10 @@
+import { Canvas } from '@react-three/fiber'
+import { Environment } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'
 import { Suspense } from 'react'
 import * as THREE from 'three'
-import { Canvas } from '@react-three/fiber'
 
 import CurrentScene from './CurrentScene'
-import { Environment } from '@react-three/drei'
 
 export default function WalletScene() {
   return (
@@ -19,11 +19,10 @@ export default function WalletScene() {
         {process.env.NODE_ENV === 'development' && (
           <motion.primitive object={new THREE.AxesHelper(10)} />
         )}
-        <motion.ambientLight intensity={0.5} />
-        <motion.pointLight position={[2, 2, 2]} intensity={2} />
-        <motion.pointLight position={[2, 2, -2]} intensity={2} />
+        <motion.ambientLight intensity={1} />
 
         <CurrentScene />
+
         <Environment preset="sunset" />
       </Suspense>
     </Canvas>
