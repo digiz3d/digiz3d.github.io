@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Text } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'
 
 export default function CardHolderSlider(props) {
@@ -33,6 +33,13 @@ export default function CardHolderSlider(props) {
           onPointerOut={() => set(false)}
           onTap={props.onTapSlider}
         />
+        <Text
+          position={[0, 0.01, 0.0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={0.02}
+          material={materials.BlackPlastic}>
+          Open me
+        </Text>
         {children}
       </motion.mesh>
     </motion.group>
