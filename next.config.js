@@ -1,10 +1,11 @@
-const withPlugins = require('next-compose-plugins')
-const optimizedImages = require('next-optimized-images')
-
-module.exports = withPlugins([[optimizedImages, { optimizeImagesInDev: true }]], {
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  /* config options here */
+  compiler: { removeConsole: true },
   reactStrictMode: true,
-  images: {
-    loader: 'custom',
-    disableStaticImages: true,
-  },
-})
+  images: { unoptimized: true },
+}
+
+module.exports = nextConfig
