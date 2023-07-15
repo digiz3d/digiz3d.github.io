@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { useGLTF, Text } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'

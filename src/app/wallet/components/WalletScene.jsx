@@ -1,3 +1,5 @@
+'use client'
+
 import { Canvas } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'

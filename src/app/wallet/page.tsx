@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import WalletScene from '../components/WalletScene'
+import WalletScene from './components/WalletScene'
 
 export default function Home() {
   return (

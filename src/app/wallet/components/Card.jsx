@@ -1,4 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion-3d'
+//@ts-expect-error
 import { Text } from 'troika-three-text'
 import { useGLTF } from '@react-three/drei'
 import { useEffect, useRef, useState } from 'react'
@@ -16,6 +19,7 @@ const opts = {
   letterSpacing: 0,
   textAlign: 'justify',
 }
+
 export default function Card(props) {
   const [hover, setHover] = useState(false)
 

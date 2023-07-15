@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import CV from '../components/cv-a4'
+import CV from './components/CV'
 
 export default function Home() {
   return (
@@ -10,7 +10,6 @@ export default function Home() {
         <meta name="description" content="Léandre Daumont" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <CV />
     </div>
   )

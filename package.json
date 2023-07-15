@@ -10,22 +10,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.50.4",
-    "@react-three/fiber": "^8.10.0",
-    "framer-motion": "^8.1.5",
-    "framer-motion-3d": "^8.1.5",
-    "jotai": "^1.12.1",
-    "next": "13.1.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "three": "^0.148.0",
-    "troika-three-text": "^0.47.1"
+    "@react-three/drei": "^9.78.2",
+    "@react-three/fiber": "^8.13.5",
+    "framer-motion": "^10.12.21",
+    "framer-motion-3d": "^10.12.21",
+    "jotai": "^2.2.2",
+    "next": "^13.4.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.3",
+    "three": "^0.154.0",
+    "troika-three-text": "^0.48.0-unicode.3"
   },
   "devDependencies": {
+    "@types/node": "20.4.2",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.31.0",
     "eslint-config-next": "13.1.1",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "typescript": "5.1.6"
   }
 }

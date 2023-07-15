@@ -1,4 +1,4 @@
-function Section({ children, title }) {
+function Section({ children, title }: { children: React.ReactNode; title: string }) {
   return (
     <section className="px-8 py-4 bg-gray-100 flex flex-row border-t">
       <h1 className="w-32">{title}</h1>
@@ -7,7 +7,21 @@ function Section({ children, title }) {
   )
 }
 
-function Experience({ title, date, subtitle, jobtitle, children, last = false }) {
+function Experience({
+  title,
+  date,
+  subtitle,
+  jobtitle,
+  children,
+  last = false,
+}: {
+  title: string
+  date: string
+  subtitle: string
+  jobtitle: string
+  children?: React.ReactNode
+  last?: boolean
+}) {
   return (
     <article className={`${last ? '' : 'pb-4 border-b mb-4'}`}>
       <div className="flex flex-row justify-between">
@@ -21,7 +35,7 @@ function Experience({ title, date, subtitle, jobtitle, children, last = false })
   )
 }
 
-function SmallItem({ title, children }) {
+function SmallItem({ title, children }: { title: string; children?: React.ReactNode }) {
   return (
     <div>
       <div>{title}</div>
@@ -30,7 +44,7 @@ function SmallItem({ title, children }) {
   )
 }
 
-export default function CV(props) {
+export default function CV() {
   return (
     <div
       className="overflow-hidden flex flex-1 flex-col bg-white box-border mx-auto"
@@ -49,7 +63,8 @@ export default function CV(props) {
       </div>
       <Section title="Profile">
         <p>
-          Specialized in <b>Fullstack JS/TS</b> with 5 years of experience using <b>React</b>.
+          Specialized in <b>Fullstack JS/TS</b> with 5 years of experience using <b>Node</b> and{' '}
+          <b>React</b>.
         </p>
       </Section>
       <Section title="Experience">

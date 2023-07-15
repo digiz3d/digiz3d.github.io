@@ -1,5 +1,7 @@
+'use client'
+
 import { useAtom } from 'jotai'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import Card from './Card'
 import CardHolderSlider from './CardHolderSlider'
