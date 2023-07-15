@@ -11,6 +11,7 @@ import CurrentScene from './CurrentScene'
 export default function WalletScene() {
   return (
     <Canvas
+      className="bg-gray-100 dark:bg-gray-900"
       camera={{
         position: [0.3, 0, 0.5],
         fov: 40,
