@@ -1,15 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion-3d'
-//@ts-expect-error
-import { Text } from 'troika-three-text'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Text } from '@react-three/drei'
 import { useEffect, useRef, useState } from 'react'
 import { extend } from '@react-three/fiber'
 
 import fonts from './fonts'
-
-extend({ Text })
 
 const opts = {
   fontSize: 0.02,
@@ -20,7 +16,7 @@ const opts = {
   textAlign: 'justify',
 }
 
-export default function Card(props) {
+export default function Card({ label, ...props }) {
   const [hover, setHover] = useState(false)
 
   useEffect(() => {
@@ -47,17 +43,16 @@ export default function Card(props) {
         receiveShadow
         geometry={nodes.Card_1.geometry}
         material={materials.front}>
-        <text
-          position-y={0.002}
-          position-x={0.073}
-          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-          text={props.borderText}
+        <Text
           font={fonts['Roboto Slab']}
           anchorX="center"
           anchorY="middle"
-          {...opts}>
-          <meshPhongMaterial attach="material" color="red" />
-        </text>
+          fontSize={0.02}
+          position={[0.073, 0.002, 0]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+          color="#000000">
+          {label}
+        </Text>
       </motion.mesh>
       <motion.mesh
         castShadow

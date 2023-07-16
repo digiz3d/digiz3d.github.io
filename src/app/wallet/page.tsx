@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import WalletScene from './components/WalletScene'
+import RootCanvas from './components/RootCanvas'
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="Léandre Daumont" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <WalletScene />
+      <RootCanvas />
     </div>
   )
 }

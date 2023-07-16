@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useGLTF, Text } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'
 
+import fonts from './fonts'
+
 export default function CardHolderSlider(props) {
   const [hover, set] = useState(false)
 
@@ -24,7 +26,8 @@ export default function CardHolderSlider(props) {
         castShadow
         receiveShadow
         geometry={nodes.Holder.geometry}
-        material={materials.Metallic}>
+        material={materials.Metallic}
+        onClick={(e) => e.stopPropagation()}>
         <motion.mesh
           castShadow
           receiveShadow
@@ -33,13 +36,14 @@ export default function CardHolderSlider(props) {
           position={[-0.1, 0, -0.03]}
           onPointerOver={() => set(true)}
           onPointerOut={() => set(false)}
-          onTap={props.onTapSlider}
+          onClick={props.onTapSlider}
         />
         <Text
-          position={[0, 0.01, 0.0]}
+          position={[0, 0.007, 0.0]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={0.02}
-          material={materials.BlackPlastic}>
+          color="#000000"
+          font={fonts['Roboto Slab']}>
           Open me
         </Text>
         {children}
