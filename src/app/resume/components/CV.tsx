@@ -1,6 +1,6 @@
 function Section({ children, title }: { children: React.ReactNode; title: string }) {
   return (
-    <section className="px-8 py-4 bg-gray-100 flex flex-row border-t">
+    <section className="px-8 py-4 bg-gray-100 dark:bg-gray-800 flex flex-row border-t">
       <h1 className="w-32">{title}</h1>
       <div className="w-full">{children}</div>
     </section>
@@ -8,6 +8,7 @@ function Section({ children, title }: { children: React.ReactNode; title: string
 }
 
 function Experience({
+  location,
   title,
   date,
   subtitle,
@@ -15,6 +16,7 @@ function Experience({
   children,
   last = false,
 }: {
+  location: string
   title: string
   date: string
   subtitle: string
@@ -25,12 +27,18 @@ function Experience({
   return (
     <article className={`${last ? '' : 'pb-4 border-b mb-4'}`}>
       <div className="flex flex-row justify-between">
-        <h2>{title}</h2>
-        <p>{date}</p>
+        <div>
+          <h2 className="inline text-black dark:text-white">{title}</h2>
+          {subtitle ? (
+            <h3 className="inline text-xs text-black dark:text-white pl-2">{subtitle}</h3>
+          ) : null}
+        </div>
+        <p>
+          {location}, {date}
+        </p>
       </div>
-      <h3 className="text-xs">{subtitle}</h3>
-      <h4 className="font-medium">{jobtitle}</h4>
-      <p className="text-sm text-gray-800">{children}</p>
+      <h4 className="font-medium text-black dark:text-white">{jobtitle}</h4>
+      <p className="text-sm text-gray-700 dark:text-gray-200">{children}</p>
     </article>
   )
 }
@@ -39,7 +47,7 @@ function SmallItem({ title, children }: { title: string; children?: React.ReactN
   return (
     <div>
       <div>{title}</div>
-      {children && <div className="text-sm text-gray-800">{children}</div>}
+      {children && <div className="text-sm text-gray-700 dark:text-gray-200">{children}</div>}
     </div>
   )
 }
@@ -47,7 +55,7 @@ function SmallItem({ title, children }: { title: string; children?: React.ReactN
 export default function CV() {
   return (
     <div
-      className="overflow-hidden flex flex-1 flex-col bg-white box-border mx-auto"
+      className="overflow-hidden flex flex-1 flex-col bg-white dark:bg-black box-border mx-auto"
       style={{
         height: '297mm',
         width: '210mm',
@@ -69,7 +77,17 @@ export default function CV() {
       </Section>
       <Section title="Experience">
         <Experience
-          title="Yubo - Paris"
+          title="Voggt"
+          location="Paris"
+          date="2022 - now"
+          subtitle="Live shopping platform"
+          jobtitle="Lead Software Engineer">
+          Migrated the backend from <b>REST</b> to <b>GraphQL</b> with strong product and new
+          features focus. Initiated the microservices development and internal tooling.
+        </Experience>
+        <Experience
+          title="Yubo"
+          location="Paris"
           date="2019 - 2022"
           subtitle="The generation Z social network"
           jobtitle="Software Engineer - Safety">
@@ -80,13 +98,19 @@ export default function CV() {
           <b>AWS S3</b>. Deployed on <b>GCP</b> using <b>Kubernetes</b>. Designed views using{' '}
           <b>Figma</b>.
         </Experience>
-        <Experience title="Sharedress - Paris" date="2018 - 2020" subtitle="B2B app" jobtitle="CTO">
+        <Experience
+          location="Paris"
+          title="Sharedress"
+          date="2018 - 2020"
+          subtitle="B2B app"
+          jobtitle="CTO">
           Created a B2B app using <b>Cloud functions</b> for <b>Firebase</b>, <b>React Native</b>{' '}
           and <b>Redux</b> to suggest the best personalized products to the business&apos;
           customers.
         </Experience>
         <Experience
-          title="Allianz - Paris"
+          location="Paris"
+          title="Allianz"
           date="2016 - 2019"
           subtitle="Multinational financial services"
           jobtitle="Software Developer - Social protection department"
@@ -98,13 +122,15 @@ export default function CV() {
       </Section>
       <Section title="Education">
         <Experience
-          title="Ingésup/YNOV - Paris"
+          location="Paris"
+          title="Ingésup/YNOV"
           subtitle="Web developement, mobile &amp; IoT"
           jobtitle="Master's Degree"
           date="2017 - 2019"
         />
         <Experience
-          title="CNAM - Paris"
+          location="Paris"
+          title="CNAM"
           subtitle="Analysis and Design of Decision-Making Information Systems"
           jobtitle="License"
           date="2016 - 2017"
@@ -121,7 +147,7 @@ export default function CV() {
             React-native
           </SmallItem>
           <SmallItem title="Back">
-            Node.js
+            Node.js (or Bun)
             <br />
             GraphQL
             <br />
@@ -133,8 +159,6 @@ export default function CV() {
             Docker
             <br />
             GCP
-            <br />
-            Azure
           </SmallItem>
         </div>
       </Section>
