@@ -1,6 +1,6 @@
 function Section({ children, title }: { children: React.ReactNode; title: string }) {
   return (
-    <section className="px-8 py-4 bg-gray-100 dark:bg-gray-800 flex flex-row border-t">
+    <section className="px-8 py-4 bg-gray-100 dark:bg-gray-800 flex flex-row border-t border-gray-200 dark:border-gray-700">
       <h1 className="w-32">{title}</h1>
       <div className="w-full">{children}</div>
     </section>
@@ -25,7 +25,7 @@ function Experience({
   last?: boolean
 }) {
   return (
-    <article className={`${last ? '' : 'pb-4 border-b mb-4'}`}>
+    <article className={`${last ? '' : 'pb-4 border-b border-gray-200 dark:border-gray-700 mb-4'}`}>
       <div className="flex flex-row justify-between">
         <div>
           <h2 className="inline text-black dark:text-white">{title}</h2>
