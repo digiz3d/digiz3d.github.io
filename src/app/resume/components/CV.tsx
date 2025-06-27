@@ -63,7 +63,7 @@ export default function CV() {
       <div className="flex flex-1 justify-between px-8 py-4">
         <div>
           <h1>Léandre Daumont</h1>
-          <h2>Software Engineer</h2>
+          <h2>Senior Staff Software Engineer</h2>
         </div>
         <div>
           <a href="https://www.linkedin.com/in/l%C3%A9andre-daumont/">Contact me</a>
@@ -71,19 +71,20 @@ export default function CV() {
       </div>
       <Section title="Profile">
         <p>
-          Specialized in <b>Fullstack JS/TS</b> with 5 years of experience using <b>Node</b> and{' '}
-          <b>React</b>.
+          I specialize into creating systems that are simple to understand, easy to iterate on and,
+          ultimately, delightful for users at scale.
         </p>
       </Section>
       <Section title="Experience">
         <Experience
-          title="Voggt"
+          title="Voggt / Fanatics Live"
           location="Paris"
           date="2022 - now"
           subtitle="Live shopping platform"
-          jobtitle="Lead Software Engineer">
-          Migrated the backend from <b>REST</b> to <b>GraphQL</b> with strong product and new
-          features focus. Initiated the microservices development and internal tooling.
+          jobtitle="Senior Staff Software Engineer">
+          Led backend development for Voggt&apos;s main app and seller studio. Collaborated closely
+          with frontend teams and product design to deliver features to production. Drove technical
+          initiatives and architectural decisions for platform scalability and team efficiency.
         </Experience>
         <Experience
           title="Yubo"
@@ -91,22 +92,20 @@ export default function CV() {
           date="2019 - 2022"
           subtitle="The generation Z social network"
           jobtitle="Software Engineer - Safety">
-          Created moderation tools using <b>React</b> with <b>SCSS</b> and <b>Redux</b> for our
-          specialists worldwide to keep our platform safe for the users. Backend using{' '}
-          <b>Express</b>, <b>Typescript</b> and <b>SocketCluster</b>. Data engineering using{' '}
-          <b>Postgres</b>, <b>MongoDB</b>, <b>ElasticSearch</b>, <b>BigQuery</b>, <b>Redis</b> and{' '}
-          <b>AWS S3</b>. Deployed on <b>GCP</b> using <b>Kubernetes</b>. Designed views using{' '}
-          <b>Figma</b>.
+          Built moderation tools with <b>React</b>, <b>SCSS</b>, <b>Redux</b> for global
+          specialists. Backend: <b>Express</b>, <b>TypeScript</b>. Data: <b>Postgres</b>,{' '}
+          <b>MongoDB</b>, <b>ElasticSearch</b>, <b>Redis</b>, <b>S3</b>. Deployed on <b>GCP</b> with{' '}
+          <b>Kubernetes</b>. UI design with <b>Figma</b>.
         </Experience>
         <Experience
           location="Paris"
           title="Sharedress"
           date="2018 - 2020"
-          subtitle="B2B app"
+          subtitle="B2B2C app"
           jobtitle="CTO">
-          Created a B2B app using <b>Cloud functions</b> for <b>Firebase</b>, <b>React Native</b>{' '}
+          Created a B2B2C app using <b>Cloud functions</b> for <b>Firebase</b>, <b>React Native</b>{' '}
           and <b>Redux</b> to suggest the best personalized products to the business&apos;
-          customers.
+          customers. We stopped working on it due to other opportunities.
         </Experience>
         <Experience
           location="Paris"
@@ -142,21 +141,15 @@ export default function CV() {
           <SmallItem title="Front">
             React
             <br />
-            Redux
-            <br />
-            React-native
+            Redux/Jotai/Zustand
           </SmallItem>
           <SmallItem title="Back">
-            Node.js (or Bun)
+            Go
             <br />
-            GraphQL
-            <br />
-            PHP <span className="text-xs">(made several commercial websites during studies)</span>
+            TypeScript
           </SmallItem>
           <SmallItem title="DevOps">
             Kubernetes
-            <br />
-            Docker
             <br />
             GCP
           </SmallItem>
