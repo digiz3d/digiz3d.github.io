@@ -1,4 +1,5 @@
 import { atom } from 'jotai'
+import { MotionProps } from 'motion/react'
 
 export const currentStepAtom = atom<SceneStep>('initial')
 export const activeCardIdAtom = atom<SceneObject | null>(null)
@@ -19,7 +20,12 @@ function getCardPosition(index: number) {
   return 0.025 * index + 0.03
 }
 
-export const steps = {
+type components = 'cardHolder' | 'cardId' | 'cardSkills' | 'cardExp'
+
+export const steps: Record<
+  SceneStep,
+  Record<components, MotionProps['animate'] | ((isActive: boolean) => MotionProps['animate'])>
+> = {
   initial: {
     cardHolder: { scale: 0, rotateX: Math.PI / 3, rotateZ: Math.PI },
     cardId: { scale: 0 },
