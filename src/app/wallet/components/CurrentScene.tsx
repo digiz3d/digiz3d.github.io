@@ -12,7 +12,6 @@ export default function CurrentScene() {
   const [step, setStep] = useAtom(currentStepAtom)
   const [activeCardId, setActiveCardId] = useAtom(activeCardIdAtom)
   const animateProps = steps[step]
-  console.log('animateProps', animateProps.cardHolder)
   const activeCardLabel = cards.find((card) => card.id === activeCardId)?.label
 
   useEffect(() => {
