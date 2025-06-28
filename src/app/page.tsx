@@ -34,11 +34,12 @@ export default function Home() {
 
           <div className="p-4">
             <p>
-              Currently Software Engineer at{' '}
+              Software Engineer at{' '}
               <a className="text-cyan-600" href="https://www.voggt.com/">
                 Voggt
-              </a>
-              .<br />
+              </a>{' '}
+              since 2022.
+              <br />
               <br />
               Mostly working on the backend, my curiosity leads me to dig into other parts of the
               business.
