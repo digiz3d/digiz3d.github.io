@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -34,11 +34,12 @@ export default function Home() {
 
           <div className="p-4">
             <p>
-              Currently Software Engineer at{' '}
-              <a className="text-cyan-600" href="https://www.voggt.com/">
+              Software Engineer at{' '}
+              <a className="text-cyan-600" href="https://voggt.com">
                 Voggt
-              </a>
-              .<br />
+              </a>{' '}
+              since 2022.
+              <br />
               <br />
               Mostly working on the backend, my curiosity leads me to dig into other parts of the
               business.
@@ -72,7 +73,7 @@ export default function Home() {
                     2019-2022
                   </p>
                   <p>
-                    <a className="text-cyan-600" href="https://www.allianz.fr/">
+                    <a className="text-cyan-600" href="https://allianz.fr">
                       Allianz
                     </a>{' '}
                     2016-2019

@@ -6,7 +6,7 @@ import Card from './Card'
 import CardHolderSlider from './CardHolderSlider'
 import { activeCardIdAtom, cards, currentStepAtom, steps } from './state'
 import React, { useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 export default function CurrentScene() {
   const [step, setStep] = useAtom(currentStepAtom)
@@ -23,7 +23,7 @@ export default function CurrentScene() {
       <CardHolderSlider
         rotation={[Math.PI / 2, 0, 0]}
         transition={{ duration: 0.5 }}
-        initial={{ scale: 0, rotateZ: Math.PI, rotateX: Math.PI / 3 }}
+        initial={steps.initial.cardHolder}
         animate={animateProps.cardHolder}
         onTapSlider={() => {
           if (step === 'closed') setStep('opened')

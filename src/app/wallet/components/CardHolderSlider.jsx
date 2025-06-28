@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useGLTF, Text } from '@react-three/drei'
 import { motion } from 'framer-motion-3d'
 
@@ -13,15 +13,11 @@ export default function CardHolderSlider(props) {
     document.body.style.cursor = hover ? 'pointer' : 'default'
   }, [hover])
 
-  const group = useRef()
   const { nodes, materials } = useGLTF('/card-holder-slider.glb')
   const { children, ...otherProps } = props
+
   return (
-    <motion.group
-      ref={group}
-      {...otherProps}
-      dispose={null}
-      onPointerOver={(e) => e.stopPropagation()}>
+    <motion.group {...otherProps} dispose={null} onPointerOver={(e) => e.stopPropagation()}>
       <motion.mesh
         castShadow
         receiveShadow

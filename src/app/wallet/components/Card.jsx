@@ -3,18 +3,8 @@
 import { motion } from 'framer-motion-3d'
 import { useGLTF, Text } from '@react-three/drei'
 import { useEffect, useRef, useState } from 'react'
-import { extend } from '@react-three/fiber'
 
 import fonts from './fonts'
-
-const opts = {
-  fontSize: 0.02,
-  color: 'red',
-  maxWidth: 300,
-  lineHeight: 1,
-  letterSpacing: 0,
-  textAlign: 'justify',
-}
 
 export default function Card({ label, ...props }) {
   const [hover, setHover] = useState(false)

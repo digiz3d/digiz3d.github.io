@@ -1,9 +1,8 @@
 import { atom } from 'jotai'
+import { MotionProps } from 'motion/react'
 
 export const currentStepAtom = atom<SceneStep>('initial')
 export const activeCardIdAtom = atom<SceneObject | null>(null)
-
-import { AnimationProps } from 'framer-motion'
 
 const stepsNames = ['initial', 'closed', 'opened', 'card'] as const
 type SceneStep = (typeof stepsNames)[number]
@@ -17,12 +16,15 @@ export const cards = [
 const objectsNames = ['cardHolder', ...cards.map((x) => x.id)] as const
 type SceneObject = (typeof objectsNames)[number]
 
+function getCardPosition(index: number) {
+  return 0.025 * index + 0.03
+}
+
+type components = 'cardHolder' | 'cardId' | 'cardSkills' | 'cardExp'
+
 export const steps: Record<
   SceneStep,
-  Record<
-    SceneObject,
-    AnimationProps['animate'] | ((isActive: boolean) => AnimationProps['animate'])
-  >
+  Record<components, MotionProps['animate'] | ((isActive: boolean) => MotionProps['animate'])>
 > = {
   initial: {
     cardHolder: { scale: 0, rotateX: Math.PI / 3, rotateZ: Math.PI },
@@ -44,9 +46,9 @@ export const steps: Record<
       rotateZ: Math.PI * 0.9,
       y: 0.05,
     },
-    cardId: { scale: 1, x: 0.025 * 0 + 0.03 },
-    cardSkills: { scale: 1, x: 0.025 * 1 + 0.03 },
-    cardExp: { scale: 1, x: 0.025 * 2 + 0.03 },
+    cardId: { scale: 1, x: getCardPosition(0) },
+    cardSkills: { scale: 1, x: getCardPosition(1) },
+    cardExp: { scale: 1, x: getCardPosition(2) },
   },
   card: {
     cardHolder: {
@@ -56,8 +58,8 @@ export const steps: Record<
       rotateZ: Math.PI * 0.9,
       y: 0.05,
     },
-    cardId: (isActive) => ({ scale: 1, x: isActive ? 1 : 0.025 * 0 + 0.03 }),
-    cardSkills: (isActive) => ({ scale: 1, x: isActive ? 1 : 0.025 * 1 + 0.03 }),
-    cardExp: (isActive) => ({ scale: 1, x: isActive ? 1 : 0.025 * 2 + 0.03 }),
+    cardId: (isActive: boolean) => ({ scale: 1, x: isActive ? 1 : getCardPosition(0) }),
+    cardSkills: (isActive: boolean) => ({ scale: 1, x: isActive ? 1 : getCardPosition(1) }),
+    cardExp: (isActive: boolean) => ({ scale: 1, x: isActive ? 1 : getCardPosition(2) }),
   },
 } as const
